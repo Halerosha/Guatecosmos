@@ -258,7 +258,7 @@ public class ShieldDeflectorMiniGame : MonoBehaviour
         spawnTimer = 0.5f;                             // Primera partícula casi de inmediato
 
         levelText.text = $"NIVEL {level}";
-        roundText.text = $"RONDA {currentRound}/{roundsToWin}";
+        //roundText.text = $"RONDA {currentRound}/{roundsToWin}";
         statusText.text = "Drag the deflector: catch GREEN energy and dodge RED solar flares!";
         UpdateTimerText();
 
