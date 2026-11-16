@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Dashboard.unity
+    guid: 4794a2fd2073e6441b4dcc906d117599
+  - enabled: 1
+    path: Assets/Scenes/PipesGame.unity
+    guid: b042876ef8ff07644bd355b3c7e2362d
+  - enabled: 1
+    path: Assets/Scenes/DeflectorGame.unity
+    guid: 5b6f218e10ddef342823ce4be5ea7a68
+  - enabled: 1
+    path: Assets/Scenes/BatteryGame.unity
+    guid: a67c071064dba964eae35331d396b5fa
+  m_configObjects: {}
