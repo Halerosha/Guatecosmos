@@ -11,7 +11,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class DifficultyStep
 {
-    public string name = "Aprendiz";               // Nombre que ve el jugador
+    public string name = "apprentice";               // Nombre que ve el jugador
     [Range(3, 6)] public int gridSize = 4;         // Tamaño de la cuadrícula (4 = 4x4)
     public float roundTime = 45f;                  // Segundos para resolver
     [Tooltip("Cada cuántos segundos una tubería se mueve sola. 0 = nunca.")]
@@ -124,11 +124,16 @@ public class OxygenPipeMiniGame : MonoBehaviour
     // Datos curiosos reales (en español, simples para niños)
     private readonly string[] facts =
     {
-        "¿Sabías que? En la Estación Espacial Internacional el oxígeno se produce separando el agua con electricidad. ¡Se llama electrólisis!",
-        "¿Sabías que? La regolita lunar (el polvo de la Luna) tiene cerca de 45% de oxígeno escondido dentro de sus minerales.",
-        "¿Sabías que? Las plantas también ayudan: absorben el CO2 que exhalamos y liberan oxígeno nuevo.",
-        "¿Sabías que? Los astronautas exhalan CO2, y la nave tiene filtros especiales para quitarlo del aire.",
-        "¿Sabías que? Los micrometeoritos son granitos de roca espacial que viajan muy rápido. ¡Por eso los equipos se revisan siempre!"
+        "Did you know - On the International Space Station, oxygen is produced by splitting water with electricity. It's called electrolysis :D",
+
+        "Did you know - Lunar regolith (moon dust) has about 45% oxygen hidden inside its minerals.",
+
+        "Did you know - Plants help too: they absorb the CO2 we exhale and release fresh oxygen.",
+
+        "Did you know - Astronauts exhale CO2, and the spacecraft has special filters to remove it from the air.",
+
+        "Did you know - Micrometeorites are tiny grains of space rock that travel very fast. That's why equipment is always checked!"
+
     };
 
     /// <summary>Tabla de dificultad por defecto (se puede editar en el Inspector).</summary>
@@ -237,7 +242,7 @@ public class OxygenPipeMiniGame : MonoBehaviour
         levelText.text = $"NIVEL {level}";
         roundText.text = $"RONDA {currentRound}/{roundsToWin}";
         movesText.text = "MOV 0";
-        statusText.text = "Conecta el INICIO (O2) con el FIN para reparar la fuga";
+        statusText.text = "connect the starting point (O2) with the FIN to repair the leak";
         UpdateTimerText();
 
         BuildPuzzle();
@@ -466,7 +471,7 @@ public class OxygenPipeMiniGame : MonoBehaviour
         }
         else
         {
-            statusText.text = "Oxigeno entregado! La siguiente reparacion sera mas dificil...";
+            statusText.text = "Oxygen delivered - The next repair will be more difficult...";
             Invoke(nameof(StartNextRound), 1.8f); // Pequeña pausa antes de la siguiente ronda
         }
     }
@@ -478,8 +483,8 @@ public class OxygenPipeMiniGame : MonoBehaviour
         foreach (var t in tiles) if (t != null) t.SetInteractable(false);
 
         resultPanel.SetActive(true);
-        resultTitleText.text = won ? "SISTEMA REPARADO!" : "SE ACABO EL TIEMPO!";
-        resultBodyText.text = $"Recuperaste {rewardTotal:0}% de Comida y Oxigeno.";
+        resultTitleText.text = won ? "System repaired!" : "time's up";
+        resultBodyText.text = $"Recovered {rewardTotal:0}% of Food and Oxygen.";
         factText.text = facts[Random.Range(0, facts.Length)];
     }
 
